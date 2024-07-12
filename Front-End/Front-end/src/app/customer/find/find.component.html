@@ -1,0 +1,43 @@
+<div class="find p-3 mx-auto">
+<p class="find_title">Find a Worker</p>
+<div class="search_div">
+  <input class="form-control me-2 search_box shadow-lg" type="search" placeholder="Search For Worker"
+         aria-label="Search"
+         (input)="onSearchChange($event)"
+  />
+</div>
+<div class="find_filter my-3 mx-auto">
+  <div class="find_location col-lg-6">
+    <select [(ngModel)]="selectedDistrict" (input)="onDistrictSortChange($event)"
+            class="location_select rounded-1 p-1">
+      <option value="" disabled selected>Select a district</option>
+      <option *ngFor="let district of districts" [value]="district.name">{{ district.name }}</option>
+    </select>
+  </div>
+  <div class="find_rating col-lg-6">
+    <select [(ngModel)]="selectedRating" (input)="onRatingChange($event)" class="location_select rounded-1 p-1">
+      <option value="" disabled selected>Select Rating</option>
+      <option *ngFor="let rate of rating" [value]="rate">{{ rate }}</option>
+    </select>
+  </div>
+</div>
+<div class="card_container">
+  <div *ngFor="let employee of employees" class="employee_card mx-auto my-2 p-3 rounded-3 shadow-lg">
+    <div class="profileImage">
+      <img [src]="employee.profilePhoto || noProfilePhoto" alt="Profile Photo">
+    </div>
+    <div class="employeeDetails">
+      <span class="employeeName">{{ employee.name }}</span>
+      <span class="employeeCategory">{{ employee.workType }}</span>
+      <span class="employeeDistrict">{{ employee.district }}</span>
+    </div>
+    <div class="rating">
+      <app-star-rating [rating]="employee.rating"></app-star-rating>
+    </div>
+    <div>
+      <button class="_primaryButton p-2" (click)="openHireModal(employee.id)">Hire</button>
+    </div>
+    </div>
+</div>
+<app-hire-modal [employeeId]="selectedEmployeeId"></app-hire-modal>
+</div>>

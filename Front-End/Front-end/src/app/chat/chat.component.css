@@ -1,0 +1,122 @@
+.chat {
+  margin: 0;
+  padding: 0;
+  /*background-color: blue;*/
+  height: 100vh;
+}
+.chatHead {
+  background-color: black;
+  color: white;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+}
+.chatTitle {
+  font-size: 20px;
+  font-weight: 400;
+}
+.chat_body {
+  display: flex;
+  flex-direction: row;
+}
+.chatParticipants {
+  background-color: black;
+  color: White;
+  height: 90vh;
+}
+
+.nameOfChat {
+  font-size: 18px;
+  font-weight: 400;
+}
+.chatParticipantsName {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  /*align-items: center;*/
+  justify-content: center;
+}
+.chatParticipantsName:hover {
+  background-color: white;
+  color: black;
+}
+.active {
+  background-color: darkgray;
+  color: black;
+  border-radius: 1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.chatIndividual {
+  background-color: gray;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.chatName {
+  background-color: black;
+  color: white;
+  height: 10vh;
+  padding: 10px;
+  text-align: center;
+  border-bottom-right-radius: 10vh;
+  border-bottom-left-radius: 10vh;
+}
+
+.chatArea {
+  background-color: darkgray;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  flex-grow: 1;
+}
+.chatMessage {
+  max-width: 80%;
+  min-width: 30%;
+  padding: 8px 12px;
+  border-radius: 2vh;
+}
+
+.right {
+  background-color: #007bff;
+  color: white;
+  align-self: flex-end;
+  float: right;
+}
+
+.left {
+  background-color: #6c757d;
+  color: white;
+  align-self: flex-start;
+  float: left;
+}
+
+.right span, .left span {
+  display: block;
+  font-size: 14px;
+  color: white;
+}
+.timeStamp {
+  text-align: right;
+}
+.sendBox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+}
+.sendMessageBox {
+  width: 100%;
+}

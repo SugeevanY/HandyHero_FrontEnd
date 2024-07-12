@@ -1,0 +1,62 @@
+<div class="modal fade" id="hireModal" tabindex="-1" aria-labelledby="hireModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="hireModalLabel">Hire Worker</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Complete the Project Quotation</p>
+        <p><strong>Worker ID: </strong>{{ employeeId }}</p>
+      </div>
+      <div>
+        <table>
+          <tr>
+            <td>
+              <label>Project Name</label>
+            </td>
+            <td>
+              <input type="text" name="projectName" (input)="onProjectNameChange($event)">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Project Location</label>
+            </td>
+            <td>
+              <input type="text" name="projectLocation" (input)="onProjectLocationChange($event)">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Project Budget</label>
+            </td>
+            <td>
+              <input type="text" name="projectBudget" (input)="onProjectBudgetChange($event)">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Project Duration</label>
+            </td>
+            <td>
+              <input type="text" name="projectDuration" (input)="onProjectDurationChange($event)">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>Project Type</label>
+            </td>
+            <td>
+              <input type="text" name="projectType" (input)="onProjectTypeChange($event)">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="confirmHire()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+.card_div {
+  background-color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40vh;
+}
+.card_div:hover {
+  background-color: black;
+  cursor: pointer;
+  color: white;
+}
+.profile_image {
+  background-color: gray;
+  width: 10vh;
+  height: 10vh;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.profile_image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.card_title {
+  font-size: 20px;
+  font-weight: 400;
+}
+.card_sub_title {
+  font-weight: 400;
+  color: gray;
+}
+.card_details {
+  /*background-color: magenta;*/
+  width: 100%;
+  display: flex;
+}
+.card_detail_1, .card_detail_2 {
+  flex-direction: column;
+  text-align: center;
+}
+.card_detail_1 {
+  /*background-color: blue;*/
+}
+.card_detail_2 {
+  /*background-color: red;*/
+}
+.details_child {
+  color: gray;
+}
+.text-orange {
+  color: orange; /* Apply this color for 'on going' status */
+}
+
+.text-green {
+  color: green; /* Apply this color for 'completed' status */
+}
+.text-red {
+  color: red;
+}

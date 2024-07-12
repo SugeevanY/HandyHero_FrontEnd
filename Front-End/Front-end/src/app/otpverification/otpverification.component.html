@@ -1,0 +1,16 @@
+<div>
+  <p class="verifyTitle">Verify Your Account</p>
+  <p class="verifySubTitle">OTP Verification</p>
+  <p>Enter the 6-digit code sent to your Email ID</p>
+  <div class="mx-auto my-3">
+    <input #input1 type="text" maxlength="1" class="codeCheckBox rounded-3 shadow-lg p-3 mx-2" (input)="moveToNext(input1, input2, null)">
+    <input #input2 type="text" maxlength="1" class="codeCheckBox rounded-3 shadow-lg p-3 mx-2" (input)="moveToNext(input2, input3, input1)">
+    <input #input3 type="text" maxlength="1" class="codeCheckBox rounded-3 shadow-lg p-3 mx-2" (input)="moveToNext(input3, input4, input2)">
+    <input #input4 type="text" maxlength="1" class="codeCheckBox rounded-3 shadow-lg p-3 mx-2" (input)="moveToNext(input4, input5, input3)">
+    <input #input5 type="text" maxlength="1" class="codeCheckBox rounded-3 shadow-lg p-3 mx-2" (input)="moveToNext(input5, input6, input4)">
+    <input #input6 type="text" maxlength="1" class="codeCheckBox rounded-3 shadow-lg p-3 mx-2" (input)="moveToNext(input6, null, input5)">
+  </div>
+  <a class="linkText px-4">Resend Code</a>
+  <br>
+  <button (click)="verifyOtp()" class="_primaryButton p-3" [(ngModel)]="otpCode">Verify OTP</button>
+</div>

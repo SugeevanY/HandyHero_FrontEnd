@@ -1,0 +1,15 @@
+<body [ngStyle]="{backgroundImage:'url(' + backGroundImage + ')'}">
+<div class="row">
+  <div class="col-lg-6 section1 container-fluid d-flex align-items-center justify-content-center flex-column">
+    <p class="title">{{layoutTitle}}</p>
+    <p class="desc">Field Work management Platform</p>
+    <p class="slogan">Join with us and make your work easier</p>
+  </div>
+  <div class="col-lg-6 section2 d-flex align-items-center justify-content-center">
+    <!-- This is where the login component will be rendered -->
+    <div class="col-lg-8 p-3 mx-auto operation_container rounded-3 shadow-lg">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+</body>

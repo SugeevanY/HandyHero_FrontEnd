@@ -1,0 +1,36 @@
+body {
+  height: 100vh;
+  margin: 0;
+  background-size: cover;
+}
+.section1, .section2 {
+  text-align: center;
+  height: 100vh;
+}
+.title {
+  font-size: 80px;
+  font-family: "Inika", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.desc {
+  font-size: 35px;
+  color: #5A4444;
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.slogan {
+  font-size: 23px;
+  font-weight: 200;
+  font-family: "Inika", serif;
+  font-style: normal;
+  color: #5A4444;
+}
+.operation_container {
+  background-color: #A79557;
+  max-height: 90vh;
+  overflow-y: auto;
+}

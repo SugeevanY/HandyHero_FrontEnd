@@ -1,0 +1,56 @@
+<div>
+  <div class="fieldWorkersTitle p-3">Field Workers</div>
+  <div>
+    <table>
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>WorkType</th>
+        <th>District</th>
+        <th>P Number</th>
+        <th>Nic</th>
+        <th>ProfileImage</th>
+        <th>Certificates</th>
+        <th>Experience</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let worker of requests">
+        <td class="px-1">{{worker.name}}</td>
+        <td class="px-1">{{worker.workType}}</td>
+        <td class="px-1">{{worker.district}}</td>
+        <td class="px-1">{{worker.phoneNumber}}</td>
+        <td class="px-1">{{worker.nic}}</td>
+        <td class="px-1">{{worker.profileImage}}</td>
+        <td class="px-1">{{worker.certificates}}</td>
+        <td class="px-1">{{worker.experience}}</td>
+        <td class="px-1 text-center">
+          <button
+            class="_primaryButton px-3 py-1"
+            *ngIf="worker.status == 'false' && worker.acceptOrRejectBy != 0"
+            (click)="accept(worker.email)"
+          >
+            Unblock
+          </button>
+          <button
+            class="_primaryButton px-3 py-1"
+            *ngIf="worker.acceptOrRejectBy == 0"
+            (click)="accept(worker.email)"
+          >
+            Accept
+          </button>
+          <button
+            class="_primaryButton px-3 py-1"
+            *ngIf="worker.status == 'true'"
+            (click)="reject(worker.email)"
+          >
+            Reject
+          </button>
+
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Chicle&display=swap');
+
+body {
+  height: 100vh;
+}
+.landing_text{
+  text-align: center;
+  flex-direction: column;
+}
+.landing_text ._title{
+  font-size: 100px;
+  font-family: "Chicle", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.landing_text .landing_body_text {
+  font-size: 19px;
+}
+

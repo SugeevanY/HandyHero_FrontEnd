@@ -1,0 +1,42 @@
+<div class="chat">
+  <div class="chatHead col-lg-12 p-2">
+    <span class="chatTitle">Messages</span>
+  </div>
+  <div class="chat_body col-lg-12">
+    <div class="chatParticipants col-lg-3 shadow-lg">
+      <div *ngFor="let participant of participants"
+           (click)="showChats(participant)"
+           class="chatParticipantsName"
+           [class.active]="participant === selectedParticipant"
+      >
+        <span class="nameOfChat px-2 pt-3">{{ participant }}</span>
+        <hr>
+      </div>
+    </div>
+    <div class="chatIndividual col-lg-9">
+      <div class="chatName shadow-lg px-3">
+        <span class="selectedParticipant">{{ selectedParticipant }}</span>
+      </div>
+      <div class="chatArea">
+        <div *ngFor="let chat of filteredChats">
+          <div class="chatRow my-2">
+            <div class="chatMessage" [ngClass]="{ 'right': chat.sender === 'Me', 'left': chat.sender !== 'Me' }">
+              <span>{{ chat.message }}</span>
+              <span class="timeStamp">{{ chat.timestamp | date:'mediumTime' }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="selectedParticipant"
+           class="sendBox col-lg-7 p-2"
+      >
+        <div class="col-lg-11">
+          <input type="text" class="sendMessageBox rounded-3 px-2 py-1">
+        </div>
+        <div class="col-lg-1 px-2">
+          <button class="_primaryButton py-2 px-3">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+.login_operation_container {
+  background-color: #A79557;
+}
+
+
+.login_container_title{
+  font-size: 35px;
+  color: white;
+  text-align: center;
+  font-weight: 400;
+}
+.input_box {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  border: none;
+}
+.login_link {
+  color: white;
+  text-decoration: none;
+}
+.login_link:hover {
+  color: black;
+}
+.forgot_password_link {
+  color:white;
+  text-align: right;
+}
+.forgot_password_link:hover {
+  color: black;
+}
+
+.error-msg {
+  color: red;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 992px) {
+  .login-section1,
+  .login-section2 {
+    padding: 0 15px; /* Add padding to adjust for small devices */
+  }
+}

@@ -1,0 +1,27 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
+body {
+  font-family: "Inika", serif;
+  font-style: normal;
+}
+._primaryButton {
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+._primaryButton:hover {
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+  border: none;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+

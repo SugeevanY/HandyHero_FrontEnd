@@ -1,0 +1,17 @@
+.projectTitle {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 400;
+  }
+  table {
+    width: 100%;
+  }
+  table, tr, th, td {
+    border: 1px solid black;
+  }
+  
+  th {
+    color: white;
+    background-color: black;
+    text-align: center;
+  }

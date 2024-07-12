@@ -1,0 +1,35 @@
+<div>
+    <div class="projectTitle p-3">Projects</div>
+    <div>
+      <table>
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>Project Name</th>
+          <th>Location</th>
+          <th>Budget</th>
+          <th>Duration</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let request of requests">
+          <td>{{ request.projectId }}</td>
+          <td>{{ request.projectName }}</td>
+          <td>{{ request.projectLocation }}</td>
+          <td>{{ request.projectBudget }}</td>
+          <td>{{ request.projectDuration }}</td>
+          <td>{{ request.projectType }}</td>
+          <td>{{ request.projectStatus === 0 ? 'Pending' : 'Completed' }}</td>
+          <td>
+            <!-- Actions can be buttons or links, add as needed -->
+            <button (click)="approveRequest(request)">Approve</button>
+            <button (click)="rejectRequest(request)">Reject</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

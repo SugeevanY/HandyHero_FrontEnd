@@ -1,0 +1,12 @@
+.star-rating {
+  font-size: 24px; /* Adjust size as needed */
+  color: black; /* Default color for stars */
+}
+
+.star {
+  cursor: pointer;
+}
+
+.star.filled {
+  color: #ffd700; /* Golden color for filled stars */
+}

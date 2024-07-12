@@ -1,0 +1,27 @@
+<div class="card_container">
+  <div class="card_div mx-auto mt-3 rounded-3 shadow-lg p-3">
+    <div class="profile_image">
+      <img [src]="profilePhotoUrl" alt="Profile Photo"/>
+    </div>
+    <div>
+      <span class="card_title">{{ project?.projectName }}</span>
+      <br>
+      <span class="card_sub_title">{{ project?.projectWorkerName }}</span>
+    </div>
+    <div class="card_details my-3">
+      <div class="card_detail_1 col-sm-6">
+        Status
+        <br>
+        <span class="details_child" [ngClass]="getStatusColor()">{{ project?.statusText }}</span></div>
+      <div class="card_detail_2 col-sm-6">
+        <span>Budget</span>
+        <br>
+        <span class="details_child">{{ project?.projectBudget }}</span>
+      </div>
+    </div>
+    <div>
+      <button (click)="navigateFunction()" class="_primaryButton p-2">Payment</button>
+    </div>
+  </div>
+</div>
+

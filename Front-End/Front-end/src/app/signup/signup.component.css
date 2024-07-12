@@ -1,0 +1,97 @@
+body {
+  height: 100vh;
+  margin: 0;
+  background-size: cover;
+}
+.login-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0; /* Remove default container padding */
+}
+.signUp-section1, .signUp-section2 {
+  text-align: center;
+  height: 100vh;
+}
+
+
+.signUp_title {
+  font-size: 100px;
+  font-family: "Inika", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.signUp_desc {
+  font-size: 35px;
+  color: #5A4444;
+  font-family: "Inika", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.signUp_slogan {
+  font-size: 23px;
+  font-weight: 200;
+  font-family: "Inika", serif;
+  font-style: normal;
+  color: #5A4444;
+}
+
+.signUp_operation_container {
+  background-color: #A79557;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+
+.signUp_container_title{
+  font-size: 35px;
+  color: white;
+  text-align: center;
+  font-weight: 400;
+}
+.input_box {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40px;
+  border: none;
+}
+.error-msg {
+  color: red;
+}
+.select_container {
+  position: relative;
+}
+._selection {
+  z-index: 1000;
+}
+.file_handling_text {
+  color: white;
+  font-weight: 300;
+  text-align: left;
+}
+
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .login-section1,
+  .login-section2 {
+    padding: 0 15px; /* Add padding to adjust for small devices */
+  }
+}
+.login_link {
+  text-align: right;
+  color:white;
+}
+.login_link:hover {
+  color: black;
+}
+

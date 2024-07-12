@@ -1,0 +1,81 @@
+<div class="complaint">
+  <div class="complaint_title">
+    <p class="title p-3 text-center">Complaint</p>
+  </div>
+  <div *ngIf="role == 'customer' || role == 'fieldWorker'">
+    <div class="complaint_panel">
+      <div class="input">
+        <div class="col-lg-4 px-3">
+          <span class="input_title">Enter the email of the victim</span>
+        </div>
+        <div class="col-lg-8">
+          <input type="text" class="input_box p-1" (input)="onEmailChange($event)">
+          <br>
+          <span class="error_msg" *ngIf="emailError">{{emailError}}</span>
+        </div>
+      </div>
+      <div class="input my-3">
+        <div class="col-lg-4 px-3">
+          <span class="input_title">Enter the victim name (optional)</span>
+        </div>
+        <div class="col-lg-8">
+          <input type="text" class="input_box p-1" (input)="onNameChange($event)">
+          <br>
+          <span class="error_msg"></span>
+        </div>
+      </div>
+      <div class="input">
+        <div class="col-lg-4 px-3">
+          <span class="input_title">Enter the complaint</span>
+        </div>
+        <div class="col-lg-8">
+          <textarea type="text" class="input_box p-1" (input)="onComplaintChange($event)"></textarea>
+          <br>
+          <span class="error_msg" *ngIf="emailError">{{complaintError}}</span>
+        </div>
+      </div>
+      <div class="input">
+        <div class="col-lg-4 px-3">
+        </div>
+        <div class="col-lg-8 text-end button_container">
+          <button class="_primaryButton py-2 px-3" (click)="onComplaint()">Make Complaint</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="role == 'admin'">
+    <div class="admin_complaint">
+      <table>
+        <thead>
+        <tr>
+          <th class="py-1">#</th>
+          <th class="py-1">Email</th>
+          <th class="py-1">Status</th>
+          <th class="py-1">Complaint</th>
+          <th class="py-1">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let complaint of complaints; let i = index">
+          <td class="py-2 px-2">{{ i + 1 }}</td>
+          <td class="py-2 px-2">{{ complaint.accusedEmail }}</td>
+          <td class="py-2 px-2">{{ complaint.status }}</td>
+          <td class="py-2 px-2">{{ complaint.complaintMessage }}</td>
+          <td class="py-2 px-2 text-center">
+            <button
+              class="_primaryButton px-3 py-1"
+              (click)="block(complaint.accusedEmail)"
+              *ngIf="complaint.status == 'true'"
+            >
+              Block
+            </button>
+            <span *ngIf="complaint.status == 'false'">Already blocked</span>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>

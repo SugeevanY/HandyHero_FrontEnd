@@ -1,0 +1,27 @@
+<div class="review">
+    <div class="review_title">
+      <p class="title p-3 text-center">Review</p>
+    </div>
+    <div *ngIf="role == 'admin'">
+      <div class="getting_review">
+        <table>
+          <thead>
+            <tr>
+              <th class="py-1">#</th>
+              <th class="py-1">Customer Email</th>
+              <th class="py-1">Field Worker Email</th>
+              <th class="py-1">Review</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let review of reviews; let i = index">
+              <td class="py-2 px-2">{{ i + 1 }}</td>
+              <td class="py-2 px-2">{{ review.customerEmail }}</td>
+              <td class="py-2 px-2">{{ review.fieldWorkerEmail }}</td>
+              <td class="py-2 px-2">{{ review.reviewText }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

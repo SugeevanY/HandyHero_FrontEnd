@@ -1,0 +1,25 @@
+<div class="p-3 mx-auto rounded-3">
+    <p class="login_container_title pt-5 pb-2 px-5">Log In To Your Account</p>
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <input (input)="onEmailChange($event)" type="text" placeholder="Please Enter Your Email Here" class=" p-3 input_box my-1 rounded-3 mb-3" id="email" name="email" ngModel>
+      <p *ngIf="emailError" class="error-msg">{{emailError}}</p>
+      <input (input)="onPasswordChange($event)" type="password" id="password" name="password" placeholder="Please Enter Your Password Here" class="p-3 input_box my-1 rounded-3" ngModel>
+      <p *ngIf="passwordError" class="error-msg">{{passwordError}}</p>
+      <br>
+      <label class="pb-1 px-4">
+        <input (input)="onRoleChange($event)" type="radio" name="options" value="customer" [(ngModel)]="role">
+        Customer
+      </label>
+      <label class="px-4">
+        <input (input)="onRoleChange($event)" type="radio" name="options" value="fieldWorker" [(ngModel)]="role">
+        Field Worker
+      </label>
+      <p *ngIf="roleError" class="error-msg">{{roleError}}</p>
+      <div class="row">
+        <a class="forgot_password_link pb-3" routerLink="/auth/ForgotPassword">forgot password?</a>
+      </div>
+      <button type="submit" class="_primaryButton py-2 px-3 mb-2">Login</button>
+      <br>
+      <a class="login_link pb-5" routerLink="/auth/signup" routerLinkActive="active">New user?Sign up</a>
+    </form>
+  </div>

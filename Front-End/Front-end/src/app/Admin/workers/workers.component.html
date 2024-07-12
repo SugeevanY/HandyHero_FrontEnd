@@ -1,0 +1,31 @@
+<div>
+  <div class="fieldWorkersTitle p-3">Field Workers</div>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>WorkType</th>
+          <th>District</th>
+          <th>P Number</th>
+          <th>Nic</th>
+          <th>ProfileImage</th>
+          <th>Certificates</th>
+          <th>Experience</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let worker of fieldWorkers">
+          <td class="px-1">{{worker.name}}</td>
+          <td class="px-1">{{worker.workType}}</td>
+          <td class="px-1">{{worker.district}}</td>
+          <td class="px-1">{{worker.phoneNumber}}</td>
+          <td class="px-1">{{worker.nic}}</td>
+          <td class="px-1">{{worker.profileImage}}</td>
+          <td class="px-1">{{worker.certificates}}</td>
+          <td class="px-1">{{worker.experience}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

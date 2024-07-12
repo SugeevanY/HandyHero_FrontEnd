@@ -1,0 +1,22 @@
+<div>
+  <div class="fieldWorkersTitle p-3">Field Workers</div>
+  <div>
+    <table>
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let customer of customers">
+        <td class="px-1">{{customer.name}}</td>
+        <td class="px-1">{{customer.email}}</td>
+        <td class="px-1">{{customer.phoneNumber}}</td>
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

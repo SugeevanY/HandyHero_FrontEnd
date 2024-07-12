@@ -1,0 +1,30 @@
+.verifyTitle {
+  font-size: 35px;
+  color: white;
+  text-align: center;
+  font-weight: 400;
+}
+
+.codeCheckBox {
+  height: 40px;
+  width: 40px;
+  border: none;
+}
+.codeCheckBox:focus {
+  outline: none;
+  background-color: white;
+}
+
+.verifySubTitle {
+  font-size: 25px;
+  color: white;
+}
+.linkText {
+  color: white;
+  float: right;
+  text-decoration: none;
+}
+.linkText:hover {
+  color: black;
+  cursor: pointer;
+}

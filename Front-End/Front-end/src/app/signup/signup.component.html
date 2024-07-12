@@ -1,0 +1,83 @@
+<div class="col-lg-12 p-3 mx-auto rounded-3">
+  <p class="signUp_container_title pt-5 pb-2 px-5">Create Account</p>
+  <form (ngSubmit)="signup()">
+    <input (input)="onNameChange($event)"  type="text" placeholder="Please Enter Your Name Here" class=" p-3 input_box my-1 rounded-3 mb-3">
+    <p *ngIf="nameError" class="error-msg">{{nameError}}</p>
+    <input (input)="onEmail($event)" type="text" placeholder="Please Enter Your Email Here" class=" p-3 input_box my-1 rounded-3 mb-3">
+    <p *ngIf="emailError" class="error-msg">{{emailError}}</p>
+    <input (input)="onPhoneNumberChange($event)" type="text" placeholder="Please Enter Your Phone Number Here" class=" p-3 input_box my-1 rounded-3 mb-3">
+    <p *ngIf="phoneNumberError" class="error-msg">{{phoneNumberError}}</p>
+    <input (input)="onPassword($event)" type="password" placeholder="Please Enter Your Password Here" class="p-3 input_box my-1 rounded-3 mb-3">
+    <p *ngIf="passwordError" class="error-msg">{{passwordError}}</p>
+    <input (input)="onConfirmPasswordChange($event)" type="password" placeholder="Please Re-enter Your Password Here" class="p-3 input_box my-1 rounded-3 mb-3">
+    <p *ngIf="confirmPasswordError" class="error-msg">{{confirmPasswordError}}</p>
+    <br>
+    <div class="select_container">
+      <select [(ngModel)]="role" (input)="onRoleChange($event)" name="role" class="input_box rounded-3 mb-3 _selection">
+        <option value="" selected disabled>Select Your Role</option>
+        <option value="fieldWorker">Field Worker</option>
+        <option value="customer">Customer</option>
+      </select>
+      <p *ngIf="roleError" class="error-msg">{{roleError}}</p>
+    </div>
+    <div *ngIf="role == 'fieldWorker'" class="select_container">
+      <select [(ngModel)]="workType" (input)="onWorkTypeChange($event)" name="workType" class="input_box rounded-3 mb-3 _selection">
+        <option value="" selected disabled>Select Your Work</option>
+        <option value="painter">Painter</option>
+        <option value="plumber">Plumber</option>
+        <option value="electrician">Electrician</option>
+        <option value="carpenter">Carpenter</option>
+        <option value="mesan">Mesan</option>
+        <option value="tileSetter">Tile Setter</option>
+      </select>
+      <p *ngIf="roleError" class="error-msg">{{roleError}}</p>
+    </div>
+    <div class="select_container">
+      <select [(ngModel)]="district" (input)="onDistrictChange($event)" name="district" class="input_box rounded-3 mb-3 _selection">
+        <option value="" selected disabled>Select Your District</option>
+        <option value="Mullaithivu">Mulliathivu</option>
+        <option value="Vavuniya">Vavuniya</option>
+        <option value="Colombo">Colombo</option>
+        <option value="Ampara">Ampara</option>
+        <option value="Batticalow">Batticalow</option>
+        <option value="Mannar">Mannar</option>
+        <option value="Kilinochchi">Kilinochchi</option>
+        <option value="Anuradhapura">Anuradhapura</option>
+        <option value="Polararuwa">Polanaruwa</option>
+        <option value="Kandy">Kandy</option>
+        <option value="Matara">Matara</option>
+        <option value="Nuweraeliya">Nuweraeliya</option>
+        <option value="Hambanthota">Hambanthota</option>
+        <option value="Kegalle">Kegalla</option>
+
+
+      </select>
+      <p *ngIf="districtError" class="error-msg">{{districtError}}</p>
+    </div>
+    <input *ngIf="role == 'fieldWorker'" (input)="onDOBChange($event)" type="date" placeholder="Enter Your Date of Birth" name="dob" class="p-3 input_box my-1 rounded-3 mb-3">
+    <p *ngIf="dobError" class="error-msg">{{dobError}}</p>
+    <div *ngIf="role == 'fieldWorker'">
+      <p class="file_handling_text px-3">Please Upload Your Profile Photo Here</p>
+      <input type="file" class="input_box my-1 rounded-3 mb-3" (input)="onProfilePhotoChange($event)">
+      <p class="error-msg">{{profileFileError}}</p>
+    </div>
+    <div *ngIf="role == 'fieldWorker'">
+      <p class="file_handling_text px-3">Please Upload Your NIC Here</p>
+      <input type="file" class="input_box my-1 rounded-3 mb-3" (input)="onNICChange($event)">
+      <p class="error-msg">{{nicFileError}}</p>
+    </div>
+    <div *ngIf="role == 'fieldWorker'">
+      <p class="file_handling_text px-3">Please Upload Your Certificates Here</p>
+      <input type="file" class="input_box my-1 rounded-3 mb-3" (input)="onCertificatesChange($event)">
+      <p class="error-msg">{{certificateFileError}}</p>
+    </div>
+    <div *ngIf="role == 'fieldWorker'">
+      <p class="file_handling_text px-3">Please Upload Your Experience Letter Here</p>
+      <input type="file" class="input_box my-1 rounded-3 mb-3" (input)="onExperienceLetterChange($event)">
+      <p class="error-msg">{{experienceLettersFileError}}</p>
+    </div>
+    <button type="submit" class="_primaryButton py-2 px-3 mb-2">{{buttonText}}</button>
+    <br>
+    <a class="login_link pb-5" routerLink="/auth/login" routerLinkActive="active">Login</a>
+  </form>
+</div>

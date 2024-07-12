@@ -1,0 +1,135 @@
+<body>
+  <div class="row">
+    <div class="drawer col-lg-2">
+      <div class="logo mx-auto">
+        <p class="logo_text">HandyHero</p>
+      </div>
+      <div class="navigation mx-auto text-start">
+        <div  class="mx-auto">
+          <div *ngIf="role == 'customer'"
+               class="p-3 drawer_item_box row m-1"
+               [class.active]="isDrawerItemActive('Projects')"
+               [routerLink]="['/dashboard/projects']"
+          >
+            <i class="fa-solid fa-diagram-project drawer_icon"></i>
+            <p class="drawer_text">Projects</p>
+            <hr>
+          </div>
+          <div *ngIf="role == 'customer'"
+               class=" p-3 drawer_item_box row"
+               [class.active]="isDrawerItemActive('Find')"
+               [routerLink]="['/dashboard/find']"
+          >
+            <i class="fa-solid fa-magnifying-glass drawer_icon"></i>
+            <p class="drawer_text">Find</p>
+            <hr>
+          </div>
+
+
+
+          <div *ngIf="role == 'customer'"
+          class=" p-3 drawer_item_box row"
+          [class.active]="isDrawerItemActive('Payment')"
+          [routerLink]="['/dashboard/payment']"
+          >
+            <i class="fa-solid fa-credit-card"></i>
+            <p class="drawer_text">Payment</p>
+          <hr>
+        </div>
+
+        <div *ngIf="role == 'customer'"
+        class="p-3 drawer_item_box row"
+        [class.active]="isDrawerItemActive('Review')"
+        [routerLink]="['/dashboard/Review']">
+       <i class="fa-solid fa-star"></i>
+       <p class="drawer_text">Review & Rating</p>
+       <hr>
+   </div>
+
+          <div *ngIf="role == 'fieldWorker'"
+               class="p-3 drawer_item_box row"
+               [class.active]="isDrawerItemActive('ProjectRequest')"
+               [routerLink]="['/dashboard/projectrequest']"
+          >
+            <i class="fa-solid fa-bullhorn drawer_icon"></i>
+            <p class="drawer_text">Project Request</p>
+            <hr>
+          </div>
+          <div *ngIf="role == 'fieldWorker'"
+               class="p-3 drawer_item_box row"
+               [class.active]="isDrawerItemActive('MyProfile')"
+          >
+            <i class="fa-solid fa-bullhorn drawer_icon"></i>
+            <p class="drawer_text">My Profile</p>
+            <hr>
+          </div>
+          <div *ngIf="role == 'customer' || role == 'fieldWorker'"
+               class="p-3 drawer_item_box row"
+               [class.active]="isDrawerItemActive('Chat')"
+               [routerLink]="['/dashboard/chat']"
+          >
+            <i class="fa-brands fa-rocketchat drawer_icon"></i>
+            <p class="drawer_text ">Chat</p>
+            <hr>
+          </div>
+          <div *ngIf="role == 'admin'"
+               class="p-3 drawer_item_box row"
+               [class.active]="isDrawerItemActive('Dashboard')"
+               [routerLink]="['/dashboard/requests']"
+          >
+            <i class="fa-solid fa-table-columns drawer_icon"></i>
+            <p class="drawer_text">Dashboard</p>
+            <hr>
+          </div>
+          <div *ngIf="role == 'admin'"
+               class="p-3 drawer_item_box row"
+               [class.active]="isDrawerItemActive('Users')"
+               [routerLink]="['/dashboard/users']"
+          >
+            <i class="fa-solid fa-users drawer_icon"></i>
+            <p class="drawer_text">Users</p>
+            <hr>
+          </div>
+
+          <div *ngIf="role == 'admin'"
+               class="p-3 drawer_item_box row"
+               [class.active]="isDrawerItemActive('FieldWorkers')"
+               [routerLink]="['/dashboard/fieldWorkers']"
+          >
+            <i class="fa-solid fa-user-tie drawer_icon"></i>
+            <p class="drawer_text">Field Workers</p>
+            <hr>
+          </div>
+
+          <div *ngIf="role == 'admin'"
+               class="p-3 drawer_item_box row"
+               [class.active]="isDrawerItemActive('GettingReview')"
+               [routerLink]="['/dashboard/GettingReview']"
+          >
+            <i class="fa-solid fa-user-tie drawer_icon"></i>
+            <p class="drawer_text">Getting-Review</p>
+            <hr>
+          </div>
+
+          <div class="drawer_item_box row p-3 "
+               [class.active]="isDrawerItemActive('Complaint')"
+               [routerLink]="['/dashboard/complaint']"
+          >
+            <i class="fa-solid fa-flag drawer_icon"></i>
+            <p class="drawer_text ">Complaint</p>
+            <hr>
+          </div>
+        </div>
+      </div>
+      <div class="drawer_bottom mx-auto" (click)="logout()">
+        <div class="drawer_item_box row p-2">
+          <i class="fa-solid fa-arrow-right-from-bracket drawer_icon"></i>
+          <p class="drawer_text">Logout</p>
+        </div>
+      </div>
+    </div>
+    <div class="dash_body col-lg-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</body>
